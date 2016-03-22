@@ -1,52 +1,75 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>objects</title>
+    <title>objects in objects in arrays or something</title>
 
     <script>
 
-    console.log("Hello");
+    var firstPlace = {
+      "city":"Lyon",
+      "country":"France"
+    };
+
+    var secondPlace = {
+      "city":"Paris",
+      "country":"France"
+    };
+
+    var thirdPlace = {
+      "city":"Amsterdam",
+      "country":"the Netherlands"
+    };
+
+    var fourthPlace = {
+      "city":"New York",
+      "country":"USA"
+    };
 
     var me = {
       "first":"Aurelien",
       "last":"Potier",
       "age":23,
-      "occupation":"art student",
-      "places":{
-        "cities":["Lyon","Paris","Amsterdam","New York"],
-        "countries"
-      }
+      "occupation":{
+        "paid":["waiter","barista"],
+        "unpaid":["art student"]
+      },
+      "places":[
+        firstPlace,
+        secondPlace,
+        thirdPlace,
+        fourthPlace
+      ]
     };
-    
 
 
 
 
 
+      console.log("Hello");
 
 
      console.log("My name is " + me.first + " " + me.last + ".");
 
-     console.log("I am " + me.age + " years old and I am an " + me.occupation + ".");
+     console.log("I am " + me.age + " years old.");
 
-    for(var i=0; i<me.cities.length; i++){
-      console.log("Cities I have lived in includes : " + me.cities[i] + ".");
+    for(var i=0; i<me.places.length; i++){
+      console.log("Cities I have lived in includes : " + me.places[i].city + ".");
+      console.log("Countries I have lived in includes : " + me.places[i].country + ".");
   };
 
-  if (i=1){
-    console.log("The second I have been living in is " + me.cities[i] + ".");
-  };
-
-  for(var i=0; i<me.cities.length; i++){
-    if (i=me.cities.length - 1){
-      console.log("The last city I have been living in is " + me.cities[i] + ".");
-
-  };
-
-
-
-
+  for(var j=0; j<me.occupation.paid.length; j++){
+    console.log("I have worked as a " + me.occupation.paid[j] + ".")
 };
+
+for(var j=0; j<me.occupation.unpaid.length; j++){
+  console.log("Otherwise I am an " + me.occupation.unpaid[j] + ".")
+};
+
+
+
+
+
+
 
 
 
